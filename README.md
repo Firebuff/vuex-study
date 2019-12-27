@@ -1,4 +1,4 @@
-# hello-world
+# vuex-study
 
 ## Project setup
 ```
