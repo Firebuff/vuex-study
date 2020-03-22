@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <div>{{ msg }}</div>
+       
         <input type="text" name="" v-model="inputText">
         <button @click="addHandle">add</button>
         <ul>
@@ -20,7 +20,7 @@ export default {
         }
     },
     props: {
-        msg: String,
+       
     },
     created () {
         // console.log(this.$store.state)
