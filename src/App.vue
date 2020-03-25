@@ -14,7 +14,7 @@ export default {
     },
     data () {
         return {
-            msg: 'I miss you all day!'
+            msg: 'App.vue'
         }
     }
 }

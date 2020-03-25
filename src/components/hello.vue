@@ -6,6 +6,11 @@
         <ul>
             <li v-for="(item,index) in nameList" :key="index">{{ item }}</li>
         </ul>
+        <div style="background-color: lightblue; color: #fff;margin-top: 20px;">
+            <button @click="setNoExistVal">设置state中原来不存在的值</button>
+            <p>{{ this.$store.state.hello }}</p>
+        </div>
+        
     </div>
 </template>
 
@@ -41,7 +46,7 @@ export default {
 
             // this.setList('万里长风宋秋燕') //使用mapActions的写法 1
             
-            // this.makeList('抽刀断水水更流') //使用mapActions的写法 2
+            this.makeList('抽刀断水水更流') //使用mapActions的写法 2
 
             // this.asynMakeList('mutation 的用法1') // mutation 的用法 1
 
@@ -61,13 +66,15 @@ export default {
 
         /* mapMutations 的使用方法 */
 
-        ...mapMutations(['SET_LIST']), //用法1
+        ...mapMutations(['SET_LIST','SET_NO_EXIST_VALUE']), //用法1
 
         // ...mapMutations({
         //     asynMakeList: 'SET_LIST'
         // }) //用法2
 
-
+        setNoExistVal () {
+            this.SET_NO_EXIST_VALUE('以前没有，但是现在我有了！')
+        }
 
     },
     computed: {

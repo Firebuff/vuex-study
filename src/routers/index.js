@@ -1,8 +1,6 @@
-import Bus01 from '@/components/bus/bus01'
-
-import Bus02 from '@/components/bus/bus02'
 
 import Hello from '@/components/hello'
+import Bus from '@/components/bus/bus'
 
 export default [
 	{
@@ -10,13 +8,9 @@ export default [
 		name: 'Hello',
 		component: Hello
 	}, {
-		path: '/bus01',
-		name: 'Bus01',
-		component: Bus01
-	}, {
-		path: '/bus02',
-		name: 'Bus02',
-		component: Bus02
+		path: '/bus',
+		name: 'Bus',
+		component: Bus
 	}
 
 ]
