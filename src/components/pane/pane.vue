@@ -1,10 +1,10 @@
 <template>
-    <div class="pane-container" ref="wrapper" @mouseup="mouseupHandle">
-        <div class="left pane-item" style="width: 30%;">hello</div>
+    <div class="pane-container" ref="wrapper" @mouseup="mouseupHandle" :style="{width: boxWdith + 'px'}">
+        <div class="left pane-item" :style="{width: boxWdith * leftWidth + 'px'}">hello</div>
+ 
+        <div class="line" :style="{left:boxWdith * leftWidth-4 + 'px'}" @mousedown="mouseDownHandle"></div>
 
-        <div class="line" style="left:calc(30% - 4px);" @mousedown="mouseDownHandle"></div>
-
-        <div class="right pane-item" style="width:70%;">hi</div>
+        <div class="right pane-item" :style="{width:(1-leftWidth)*boxWdith + 'px'}">hi</div>
     </div>
 </template>
 <script>
@@ -26,7 +26,11 @@ export default {
             //鼠标距离父元素最左边的距离 = 鼠标的左边距离 - 盒子距离页面左边的距离
             let mouseToBoxLeft = event.pageX - this.$refs.wrapper.getBoundingClientRect().left
 
-            console.log(mouseToBoxLeft)
+            this.leftWidth = (mouseToBoxLeft / this.boxWdith).toFixed(2)
+
+            console.log(this.leftWidth)
+
+            // console.log(mouseToBoxLeft)
 
             // console.log(this.$refs.wrapper.getBoundingClientRect())
         },
