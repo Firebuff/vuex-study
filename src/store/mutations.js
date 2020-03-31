@@ -2,7 +2,7 @@ import * as types from './types'
 
 import Vue from 'vue'
 
-console.log(types)
+// console.log(types)
 
 const mutations = {
     [types.SET_LIST] (state,item) {

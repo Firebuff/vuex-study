@@ -8,7 +8,7 @@ import * as actions from './actions'
 
 import setLocalStore from '@/store/plugin/localStore'
 
-console.log(actions)
+// console.log(actions)
 
 Vue.use(Vuex)
 

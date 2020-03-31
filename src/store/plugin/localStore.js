@@ -7,8 +7,7 @@
  */
 
 export default function (store) {
-	console.log(8888)
-
+	
 	// 如果本地存储 保存有 state 的数据，那么就 state 就用 本地存储中的数据
 	if (localStorage.state) {
 		store.replaceState(JSON.parse(localStorage.state))

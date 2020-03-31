@@ -1,5 +1,5 @@
 <template>
-    <div class="pane-container" ref="wrapper">
+    <div class="pane-container" ref="wrapper" @mouseup="mouseupHandle">
         <div class="left pane-item" style="width: 30%;">hello</div>
 
         <div class="line" style="left:calc(30% - 4px);" @mousedown="mouseDownHandle"></div>
@@ -11,27 +11,39 @@
 export default {
     data: function() {
         return {
-            leftWidth: 0.3
+            leftWidth: 0.3,
+            canMove: false,
+            boxWdith: 400
         }
     },
     methods: {
         mouseMoveHandle(event) {
-
             //event.pageX 鼠标距离页面左边的距离, getBoundingClientRect() 返回一个元素的一些属性
             
-            console.log(this.$refs.wrapper.getBoundingClientRect())
+            if (!this.canMove) {
+                return;
+            }
+            //鼠标距离父元素最左边的距离 = 鼠标的左边距离 - 盒子距离页面左边的距离
+            let mouseToBoxLeft = event.pageX - this.$refs.wrapper.getBoundingClientRect().left
+
+            console.log(mouseToBoxLeft)
+
+            // console.log(this.$refs.wrapper.getBoundingClientRect())
         },
 
         // 当 鼠标按下时候，给document添加一个 鼠标移动事件
         mouseDownHandle () {
+            this.canMove = true
             document.addEventListener('mousemove', this.mouseMoveHandle)
+        },
+        mouseupHandle () {
+            this.canMove = false
         }
     }
 }
 </script>
 <style lang="scss" scoped>
 .pane-container {
-    width: 400px;
     height: 250px;
     background-color: #FFF8DC;
     position: relative;
