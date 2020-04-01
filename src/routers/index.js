@@ -3,6 +3,7 @@ import Hello from '@/pages/hello'
 import Bus from '@/pages/bus'
 import Count from '@/pages/count' 
 import Pane from '@/pages/pane' 
+import Recursion from '@/pages/recursion' 
 
 
 
@@ -23,6 +24,10 @@ export default [
 		path: '/pane',
 		name: 'Pane',
 		component: Pane
+	}, {
+		path: '/recursion',
+		name: 'Recursion',
+		component: Recursion
 	}
 
 ]
