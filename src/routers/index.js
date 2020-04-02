@@ -4,6 +4,7 @@ import Bus from '@/pages/bus'
 import Count from '@/pages/count' 
 import Pane from '@/pages/pane' 
 import Recursion from '@/pages/recursion' 
+import Api from '@/pages/api' 
 
 
 
@@ -28,6 +29,10 @@ export default [
 		path: '/recursion',
 		name: 'Recursion',
 		component: Recursion
+	}, {
+		path: '/api',
+		name: 'Api',
+		component: Api
 	}
 
 ]
