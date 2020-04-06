@@ -4,11 +4,17 @@ import Vuex from 'vuex'
 import store from './store/index'
 import Bus from '@/bus'
 
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
+
+
 Vue.prototype.$bus = Bus // 将bus文件中的vue实例挂载在vue 的原型上
 
 import router from '@/routers/router'
 
 Vue.use(Vuex)
+
+Vue.use(ViewUI);
 
 Vue.config.productionTip = false
 

@@ -5,6 +5,7 @@ import Count from '@/pages/count'
 import Pane from '@/pages/pane' 
 import Recursion from '@/pages/recursion' 
 import Api from '@/pages/api' 
+import Admin from '@/pages/admin' 
 
 
 
@@ -33,6 +34,10 @@ export default [
 		path: '/api',
 		name: 'Api',
 		component: Api
+	}, {
+		path: '/admin',
+		name: 'Admin',
+		component: Admin
 	}
 
 ]
